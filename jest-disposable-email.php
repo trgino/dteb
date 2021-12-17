@@ -13,7 +13,7 @@ function jest_dteb_check_email( $user_login, $user_email, $errors ){
 	global $wpdb;
 	$exp = explode('@',$user_email);
 	if(isset($exp[1]) && !empty($exp[1]) && $wpdb->get_var( $wpdb->prepare( "select id from " . $wpdb->prefix . "dteb_list where domain = '%s'", $exp[1] ) )>0){
-		$errors->add( 'invalid_email', __( '<strong>Hata</strong>: E-Posta adresi geçersiz.' ) );
+		$errors->add( 'invalid_email', __( <strong>Error</strong>: The email address isn&#8217;t correct.' ) );
 	}
 }
 add_action( 'register_post', 'jest_dteb_check_email', 1, 3 );
